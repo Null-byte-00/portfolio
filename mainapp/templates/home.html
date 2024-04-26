@@ -2,4 +2,11 @@
 {% block title %}Home{% endblock %}
 {% block body %}
     <h1>Welcome to the Home Page</h1>
+    {{ site_description }}
+    <h2>Medias</h2>
+    <ul>
+        {% for media in medias %}
+            <li>{{ media.title }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
