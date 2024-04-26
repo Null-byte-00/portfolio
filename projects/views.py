@@ -7,3 +7,4 @@ class ProjectsList(ListView):
     template_name = "projects.html"
     model = Project
     queryset = Project.objects.all()
+    context_object_name = "projects"
