@@ -6,13 +6,13 @@
     <div class="box"> 
         <h2>{{ article.title }}</h2>
         <p>{{ article.description | truncatechars:30 }}</p>
-        <a href="#">Link to article</a>
+        <a href="{% url 'articles:article' slug=article.slug %}">Link to article</a>
     </div>
     {% endfor %}
 
     {% if articles.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            <a href="?page=1">&laquo; 1</a>
+            <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
     {% endif %}
 
 {% endblock %}
