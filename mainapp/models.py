@@ -16,6 +16,42 @@ class SiteDescription(models.Model):
         super().save()
 
 
+class Resume(models.Model):
+    resume = models.TextField()
+
+    def __str__(self):
+        return self.resume
+    
+    def save(self):
+        if Resume.objects.exists():
+            self.pk = Resume.objects.first().pk
+        super().save()
+
+
+class Biography(models.Model):
+    bio = models.TextField()
+
+    def __str__(self):
+        return self.bio
+    
+    def save(self):
+        if Biography.objects.exists():
+            self.pk = Biography.objects.first().pk
+        super().save()
+
+
+class Experience(models.Model):
+    experience = models.TextField()
+
+    def __str__(self):
+        return self.experience
+    
+    def save(self):
+        if Experience.objects.exists():
+            self.pk = Biography.objects.first().pk
+        super().save()
+
+
 class Media(models.Model):
     name = models.CharField(max_length=1000)
     url = models.URLField()

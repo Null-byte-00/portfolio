@@ -30,5 +30,5 @@ class ArticleDetail(DetailView):
         context["body"] = md.convert(self.get_object().body)
         return context
     
-    def get_object(self, queryset: QuerySet[Any] | None = ...) -> Model:
+    def get_object(self) -> Model:
         return self.model.objects.get(slug=self.kwargs.get("slug"))
