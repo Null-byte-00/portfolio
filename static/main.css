@@ -7,3 +7,11 @@ a {
     color: yellowgreen;
     margin: 10px 10px 10px;
 }
+
+.box {
+    background-color: rgb(26, 24, 24);
+    color: yellowgreen;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px yellowgreen;
+}
