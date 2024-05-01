@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from .models import SiteDescription, Media, Resume, Biography, Experience
+from articles.models import Article
+from projects.models import Project
 import markdown
 # Create your views here.
 
+
 def home(request):
     site_description = SiteDescription.objects.first()
+    new_articles = Article.objects.all().order_by("-date")[:3]
+    new_projects = Project.objects.all().order_by("-date")[:3]
     media = Media.objects.all()
     return render(request, "home.html", {"site_description": site_description, "medias": media})
 

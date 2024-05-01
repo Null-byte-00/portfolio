@@ -21,6 +21,7 @@ class Project(models.Model):
     link = models.URLField(null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     technologies = models.ManyToManyField(Technology)
+    date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return f"{self.title[:100]} - {self.category}"

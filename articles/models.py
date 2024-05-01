@@ -19,6 +19,7 @@ class Article(models.Model):
     image = models.ImageField(upload_to="images/", null=True, blank=True)
     tags = models.ManyToManyField(Tag)
     slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.title
