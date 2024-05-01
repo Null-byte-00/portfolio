@@ -7,7 +7,8 @@
         {% for media in medias %}
         <div class="box">
             <li>{{ media.title }}</li>
-            <img src="{{ media.image.url }}" alt="{{ media.title }}" />
+            <img class="media-image"
+            onclick="window.location.href='{{ media.image.url }}'" src="{{ media.image.url }}" alt="{{ media.title }}" />
         </div>
         {% endfor %}
     </ul>
