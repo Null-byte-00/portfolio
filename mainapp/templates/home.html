@@ -6,7 +6,7 @@
     <ul>
         {% for media in medias %}
             <img class="media-image"
-            onclick="window.location.href='{{ media.image.url }}'" src="{{ media.image.url }}" alt="{{ media.title }}" 
+            onclick="window.location.href='{{ media.url }}'" src="{{ media.image.url }}" alt="{{ media.title }}" 
             style="width: 10%; height: 10%;"/>
         {% endfor %}
     </ul>
