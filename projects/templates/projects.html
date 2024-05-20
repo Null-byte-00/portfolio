@@ -20,7 +20,7 @@
         <!-- Technologies -->    
         Technologies used:
         {% for technology in project.technologies.all %}
-            <a class="technology" href="{% url 'projects:technology' slug=technology.slug %}">{{ technology }}</p>
+            <a class="technology" href="{% url 'projects:technology' slug=technology.slug %}">{{ technology }}</a>
         {% endfor %}
     </div>
     {% endfor %}
