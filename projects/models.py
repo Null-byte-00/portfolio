@@ -36,3 +36,9 @@ def create_category_slug(sender, instance, created, **kwargs):
     if created:
         instance.slug = slugify(instance.name)
         instance.save()
+    
+@receiver(post_save, sender=Technology)
+def create_technology_slug(sender, instance, created, **kwargs):
+    if created:
+        instance.slug = slugify(instance.name)
+        instance.save()
