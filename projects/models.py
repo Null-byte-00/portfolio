@@ -4,12 +4,14 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=1000)
+    slug = models.SlugField(null=True, blank=True)
 
     def __str__(self):
         return self.name
 
 class Technology(models.Model):
     name = models.CharField(max_length=1000)
+    slug = models.SlugField(null=True, blank=True)
 
     def __str__(self):
         return self.name
