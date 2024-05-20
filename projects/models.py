@@ -1,5 +1,7 @@
 from django.db import models
-
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+from django.utils.text import slugify
 # Create your models here.
 
 class Category(models.Model):
@@ -27,3 +29,10 @@ class Project(models.Model):
 
     def __str__(self):
         return f"{self.title[:100]} - {self.category}"
+
+
+@receiver(post_save, sender=Category)
+def create_category_slug(sender, instance, created, **kwargs):
+    if created:
+        instance.slug = slugify(instance.name)
+        instance.save()
