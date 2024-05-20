@@ -9,14 +9,14 @@
         margin: 5px;
     }
 </style>
-    <h1>My projects</h1>
+    <h1>{{ topic }} projects</h1>
     {% for project in projects %}
     <div class="box"> 
         <h2>{{ project.title }}</h2>
         <p>{{ project.description  }}</p>
         <a href="{{ project.url }}">Link to project</a>
         <!-- Category -->
-        <p>Category: {{ project.category }}</p>
+        <a href="{% url 'projects:category' slug=project.category.slug %}">Category: {{ project.category }}</p>
         <!-- Technologies -->    
         Technologies used:
         {% for technology in project.technologies.all %}
