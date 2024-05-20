@@ -11,7 +11,7 @@
         <p>Category: {{ project.category }}</p>
         <!-- Technologies -->    
         <p>Technologies used:</p>
-        {% for technology in project.technologies %}
+        {% for technology in project.technologies.all %}
             <a href="#">{{ technology }}</p>
         {% endfor %}
     </div>

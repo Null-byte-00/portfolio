@@ -9,6 +9,11 @@ class ProjectsList(ListView):
     queryset = Project.objects.all()
     context_object_name = "projects"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["topic"] = "All"
+        return context
+
 
 class TechnologyProjectsList(ListView):
     template_name = "projects.html"
