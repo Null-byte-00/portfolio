@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Project
+from .models import Project, Category, Technology
 # Create your views here.
 
 class ProjectsList(ListView):
@@ -25,7 +25,7 @@ class TechnologyProjectsList(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["topic"] = self.kwargs["slug"]
+        context["topic"] = Technology.objects.get(slug=self.kwargs["slug"]).name
         return context
 
 
@@ -39,5 +39,5 @@ class CategoryProjectsList(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["topic"] = self.kwargs["slug"]
+        context["topic"] = Category.objects.get(slug=self.kwargs["slug"]).name
         return context
