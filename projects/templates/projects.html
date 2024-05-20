@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Projects{% endblock %}
 {% block body %}
+<style>
+    .technology {
+        background-color: yellowgreen;
+        color: black;
+        padding: 5px;
+        margin: 5px;
+    }
+</style>
     <h1>My projects</h1>
     {% for project in projects %}
     <div class="box"> 
@@ -10,9 +18,9 @@
         <!-- Category -->
         <p>Category: {{ project.category }}</p>
         <!-- Technologies -->    
-        <p>Technologies used:</p>
+        Technologies used:
         {% for technology in project.technologies.all %}
-            <a href="#">{{ technology }}</p>
+            <a class="technology" href="{% url 'projects:technology' slug=technology.slug %}">{{ technology }}</p>
         {% endfor %}
     </div>
     {% endfor %}
