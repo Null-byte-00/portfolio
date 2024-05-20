@@ -8,7 +8,8 @@
         <div class="box">
             <li>{{ media.title }}</li>
             <img class="media-image"
-            onclick="window.location.href='{{ media.image.url }}'" src="{{ media.image.url }}" alt="{{ media.title }}" />
+            onclick="window.location.href='{{ media.image.url }}'" src="{{ media.image.url }}" alt="{{ media.title }}" 
+            style="width: 10%; height: 10%;"/>
         </div>
         {% endfor %}
     </ul>
