@@ -7,7 +7,7 @@
     <ul>
         {% for project in new_projects %}
             <li>
-                <a href="{{ project.url }}">{{ project.title }}</a>
+                <a href="{{ project.link }}">{{ project.title }}</a>
             </li>
         {% endfor %}
     </ul>
@@ -16,7 +16,7 @@
     <ul>
         {% for article in new_articles %}
             <li>
-                <a href="{{ article.url }}">{{ article.title }}</a>
+                <a href="{{ article.link }}">{{ article.title }}</a>
             </li>
         {% endfor %}
     </ul>
