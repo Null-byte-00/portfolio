@@ -2,12 +2,31 @@
 {% block title %}Home{% endblock %}
 {% block body %}
     <h1>0x00 Home page</h1>
+    <!-- Projects -->
+    <h2>New Projects</h2>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <a href="{% project.url %}">{{ project.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- Articles -->
+    <h2>New Articles</h2>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{% article.url %}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- Medias -->
     <h2>Medias</h2>
     <ul>
         {% for media in medias %}
             <img class="media-image"
             onclick="window.location.href='{{ media.url }}'" src="{{ media.image.url }}" alt="{{ media.title }}" 
-            style="width: 10%; height: 10%;"/>
+            style="width: 5%; height: 10%; padding: 5px; cursor: pointer;" />
         {% endfor %}
     </ul>
 {% endblock %}

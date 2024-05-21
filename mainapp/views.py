@@ -11,7 +11,10 @@ def home(request):
     new_articles = Article.objects.all().order_by("-date")[:3]
     new_projects = Project.objects.all().order_by("-date")[:3]
     media = Media.objects.all()
-    return render(request, "home.html", {"site_description": site_description, "medias": media})
+    return render(request, "home.html", {"site_description": site_description, 
+                                         "medias": media,
+                                         "new_articles": new_articles,
+                                         "new_projects": new_projects})
 
 
 def about(request):
