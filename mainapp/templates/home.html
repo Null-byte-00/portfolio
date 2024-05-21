@@ -5,7 +5,7 @@
     <!-- Projects -->
     <h2>New Projects</h2>
     <ul>
-        {% for project in projects %}
+        {% for project in new_projects %}
             <li>
                 <a href="{{ project.url }}">{{ project.title }}</a>
             </li>
@@ -14,7 +14,7 @@
     <!-- Articles -->
     <h2>New Articles</h2>
     <ul>
-        {% for article in articles %}
+        {% for article in new_articles %}
             <li>
                 <a href="{{ article.url }}">{{ article.title }}</a>
             </li>
