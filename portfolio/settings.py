@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,7 +45,8 @@ INSTALLED_APPS = [
     "projects",
     "articles",
     "api",
-    "rest_framework"
+    "rest_framework",
+    "drf_yasg"
 ]
 
 MIDDLEWARE = [
