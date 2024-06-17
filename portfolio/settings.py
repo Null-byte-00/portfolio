@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     "articles",
     "api",
     "rest_framework",
-    "drf_yasg"
+    "drf_yasg",
+    "new_ui",
 ]
 
 MIDDLEWARE = [
