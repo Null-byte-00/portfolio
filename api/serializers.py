@@ -23,6 +23,12 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
+    serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field='name'
+     )
+
     class Meta:
         model = Article
-        fields = ['title', ]
+        fields = ['title', 'body', 'date', 'tags', 'slug']
