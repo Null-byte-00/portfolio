@@ -16,7 +16,7 @@
     <ul>
         {% for article in new_articles %}
             <li>
-                <a href="{{ article.link }}">{{ article.title }}</a>
+                <a href="{% url 'articles:article' slug=article.slug %}">{{ article.title }}</a>
             </li>
         {% endfor %}
     </ul>
