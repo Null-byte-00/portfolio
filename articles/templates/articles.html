@@ -5,7 +5,7 @@
     {% for article in articles %}
     <div class="box"> 
         {% if article.image %}
-            <img src="{{ article.image }}" height="100" width="100">
+            <img src="/media/{{ article.image }}" height="100" width="100">
         {% endif %}
         <h2>{{ article.title }}</h2>
         <p>{{ article.description | truncatechars:30 }}</p>
