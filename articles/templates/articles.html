@@ -8,7 +8,7 @@
             <img src="/media/{{ article.image }}" height="100" width="100">
         {% endif %}
         <h2>{{ article.title }}</h2>
-        <p>{{ article.description | truncatechars:30 }}</p>
+        <p>{{ article.body | truncatechars:30 }}</p>
         <a href="{% url 'articles:article' slug=article.slug %}">Link to article</a>
         <small>Published on {{ article.date }}</small>
     </div>
