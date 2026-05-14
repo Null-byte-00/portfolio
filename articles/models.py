@@ -26,9 +26,10 @@ class Article(models.Model):
     
 
 class ArticleImage(models.Model):
-    artcle = models.ForeignKey(Article, on_delete=models.SET_NULL, null=True)
+    article = models.ForeignKey(Article, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    image = models.ImageField(upload_to="images/", null=True, blank=True)
 
 
 
